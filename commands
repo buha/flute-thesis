@@ -1,0 +1,10 @@
+Beautify C:
+clang-format -i AnalyseNotes.c
+
+Beautify XML:
+xmllint -o BbClarinet.xml --format BbClarinet.xml
+
+Validate XML:
+xmllint --noout --dtdvalid woodwind.dtd ModernFlute.xml 
+xmllint --noout --dtdvalid woodwind.dtd ClassicalFlute.xml 
+xmllint --noout --dtdvalid woodwind.dtd BbClarinet.xml

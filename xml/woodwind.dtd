@@ -1,0 +1,27 @@
+<!-- woodwind.dtd -->
+<!-- Paul Dickens - February 2007 -->
+<!-- Data Type Definition for a woodwind -->
+<!ELEMENT woodwind ((embouchurehole, upstream)?, downstream)>
+<!ATTLIST woodwind description CDATA #IMPLIED>
+<!ELEMENT embouchurehole (radiusin, radiusout, length, boreradius)>
+<!ELEMENT upstream (bore+)>
+<!ATTLIST upstream flange CDATA #REQUIRED>
+<!ELEMENT downstream (bore, (hole | bore)*)>
+<!ATTLIST downstream flange CDATA #REQUIRED>
+<!ELEMENT bore (radius1, radius2, length)>
+<!ELEMENT hole (radius, length, boreradius, key?)>
+<!ATTLIST hole name CDATA #IMPLIED>
+<!ELEMENT key (radius, holeradius, height, thickness, wallThickness,
+chimneyHeight)>
+<!ELEMENT radius (#PCDATA)>
+<!ELEMENT radiusin (#PCDATA)>
+<!ELEMENT radiusout (#PCDATA)>
+<!ELEMENT radius1 (#PCDATA)>
+<!ELEMENT radius2 (#PCDATA)>
+<!ELEMENT boreradius (#PCDATA)>
+<!ELEMENT length (#PCDATA)>
+<!ELEMENT holeradius (#PCDATA)>
+<!ELEMENT height (#PCDATA)>
+<!ELEMENT thickness (#PCDATA)>
+<!ELEMENT wallThickness (#PCDATA)>
+<!ELEMENT chimneyHeight (#PCDATA)>
