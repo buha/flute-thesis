@@ -26,6 +26,10 @@ SRC_ANALYSENOTES = $(SRC) \
 	Point.c \
 	AnalyseNotes.c
 
+SRC_WAVES= $(SRC) \
+	ParseXML.c \
+	Waves.c
+
 $(OBJDIR)/%.o: %.c
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c -o $@ $<
@@ -34,7 +38,7 @@ $(OBJDIR)/%.d: %.c
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -MM -MT $@ -MF $<
 
-all: Impedance PlayedImpedance AnalyseNotes
+all: Impedance PlayedImpedance AnalyseNotes Waves
 
 Impedance: $(patsubst %.c,$(OBJDIR)/%.o,$(SRC_IMPEDANCE))
 	$(CC) $(LDFLAGS) $^ -o $@
@@ -45,6 +49,8 @@ PlayedImpedance: $(patsubst %.c,$(OBJDIR)/%.o,$(SRC_PLAYEDIMPEDANCE))
 AnalyseNotes: $(patsubst %.c,$(OBJDIR)/%.o,$(SRC_ANALYSENOTES))
 	$(CC) $(LDFLAGS) $^ -o $@
 
+Waves: $(patsubst %.c,$(OBJDIR)/%.o,$(SRC_WAVES))
+	$(CC) $(LDFLAGS) $^ -o $@
 
 .PHONY: clean
 clean:
