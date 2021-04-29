@@ -18,6 +18,14 @@ SRC_PLAYEDIMPEDANCE = $(SRC) \
 	ParseXML.c \
 	PlayedImpedance.c
 
+SRC_ANALYSENOTES = $(SRC) \
+	Analysis.c \
+	Minima.c \
+	Note.c \
+	ParseImpedance.c \
+	Point.c \
+	AnalyseNotes.c
+
 $(OBJDIR)/%.o: %.c
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c -o $@ $<
@@ -26,13 +34,17 @@ $(OBJDIR)/%.d: %.c
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -MM -MT $@ -MF $<
 
+all: Impedance PlayedImpedance AnalyseNotes
+
 Impedance: $(patsubst %.c,$(OBJDIR)/%.o,$(SRC_IMPEDANCE))
 	$(CC) $(LDFLAGS) $^ -o $@
 
 PlayedImpedance: $(patsubst %.c,$(OBJDIR)/%.o,$(SRC_PLAYEDIMPEDANCE))
 	$(CC) $(LDFLAGS) $^ -o $@
 
-all: Impedance PlayedImpedance
+AnalyseNotes: $(patsubst %.c,$(OBJDIR)/%.o,$(SRC_ANALYSENOTES))
+	$(CC) $(LDFLAGS) $^ -o $@
+
 
 .PHONY: clean
 clean:
