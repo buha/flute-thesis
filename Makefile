@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -I/usr/include/libxml2/
+CFLAGS = -Wall -I/usr/include/libxml2/ -g
 LDFLAGS = -lm -lgsl -lgslcblas -lxml2 
 OBJDIR=build
 
