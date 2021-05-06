@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE woodwind SYSTEM "woodwind.dtd">
+<woodwind description="Turkish 8-hole kaval">
+  <downstream flange="0.625p">
+   <bore>
+     <radius1>8</radius1>
+     <radius2>8</radius2>
+     <length>345.5</length>
+    </bore>
+    <hole name="Backhole">
+      <radius>4.25</radius>
+      <length>1.5</length>
+      <boreradius>8</boreradius>
+    </hole>
+    <bore>
+     <radius1>8</radius1>
+     <radius2>8</radius2>
+     <length>44.5</length>
+    </bore>
+    <hole name="Hole7">
+      <radius>2.9</radius>
+      <length>1.5</length>
+      <boreradius>8</boreradius>
+    </hole>
+    <bore>
+     <radius1>8</radius1>
+     <radius2>8</radius2>
+     <length>33</length>
+    </bore>
+    <hole name="Hole6">
+      <radius>4.25</radius>
+      <length>1.5</length>
+      <boreradius>8</boreradius>
+    </hole>
+    <bore>
+     <radius1>8</radius1>
+     <radius2>8</radius2>
+     <length>31</length>
+    </bore>
+    <hole name="Hole5">
+      <radius>4.25</radius>
+      <length>1.5</length>
+      <boreradius>8</boreradius>
+    </hole>
+    <bore>
+     <radius1>8</radius1>
+     <radius2>8</radius2>
+     <length>32</length>
+    </bore>
+    <hole name="Hole4">
+      <radius>4.25</radius>
+      <length>1.5</length>
+      <boreradius>8</boreradius>
+    </hole>
+    <bore>
+     <radius1>8</radius1>
+     <radius2>8</radius2>
+     <length>34.5</length>
+    </bore>
+    <hole name="H3">
+      <radius>4.25</radius>
+      <length>1.5</length>
+      <boreradius>8</boreradius>
+    </hole>
+    <bore>
+     <radius1>8</radius1>
+     <radius2>8</radius2>
+     <length>30</length>
+    </bore>
+    <hole name="H2">
+      <radius>4.25</radius>
+      <length>1.5</length>
+      <boreradius>8</boreradius>
+    </hole>
+    <bore>
+     <radius1>8</radius1>
+     <radius2>8</radius2>
+     <length>33</length>
+    </bore>
+    <hole name="H1">
+      <radius>4.25</radius>
+      <length>1.5</length>
+      <boreradius>8</boreradius>
+    </hole>
+    <bore>
+     <radius1>8</radius1>
+     <radius2>8</radius2>
+     <length>83.5</length>
+    </bore>
+    <hole name="Tuninghole2">
+      <radius>4.25</radius>
+      <length>1.5</length>
+      <boreradius>8</boreradius>
+    </hole>
+    <bore>
+     <radius1>8</radius1>
+     <radius2>8</radius2>
+     <length>48</length>
+    </bore>
+    <hole name="Tuninghole1">
+      <radius>8.5</radius>
+      <length>1.5</length>
+      <boreradius>8</boreradius>
+    </hole>
+    <bore>
+     <radius1>8</radius1>
+     <radius2>8</radius2>
+     <length>58</length>
+    </bore>
+  </downstream>
+</woodwind>
