@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # Usage:
-#   ./ImpedancePlot file1.csv file2.csv
-#   ./Impedance -s "XXXXXXXXXXXXXXXX" -t 21.6 -u 0.37 xml/ModernFlute.xml | ./ImpedancePlot 
+#   ./PlayedImpedancePlot file.csv
+#   ./PlayedImpedance template/KavalSib xml/ModernFlute.xml | ./ImpedancePlot 
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
@@ -23,21 +23,12 @@ if __name__ == "__main__":
             csv = pd.read_csv(io.StringIO(stdin), header=None, sep='\t')
         else:
             csv = pd.read_csv(f, header=None, sep='\t')
-        freq = csv[0]
-        zr = csv[1]
-        zi = csv[2]
-        zrsq = list(map(lambda n: n ** 2, zr))
-        zisq = list(map(lambda n: n ** 2, zi))
-        z = list(map(add, zrsq, zisq))
-        z = list(map(lambda n: sqrt(n), z))
-
+        freq = csv[0][1:]
+        print(csv)
         ax = fig.add_subplot(1, 1, 1)
-        ax.plot(freq, z, label=f)
-        ax.set(xlabel='Frequency (kHz)', ylabel='|Z| (Pa s m−3)')
-        r = np.logspace(4, 8, 5)
-        ax.set_yticklabels([str(x) for x in r])
-        ax.set_ylim([10e3, 10e7])
-        ax.set_yscale('log')
+        for i in range(1, len(csv.columns)):
+            ax.plot(freq, csv[i][1:], label=str(csv[i][0]))
+        ax.set(xlabel='Frequency (Hz)', ylabel='20 log_10 (|Z| / Z0) (Z0 = 1 Pa s m−3)')
         plt.legend()
 
     plt.show()
