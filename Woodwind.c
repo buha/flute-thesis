@@ -256,10 +256,18 @@ TransferMatrix headMatrix(double f, Head h, double entryratio, double x) {
   return m;
 }
 complex faceZ(double f, Head head, int midi) {
-  double c = head->embouchureHole->c;
-  double rho = head->embouchureHole->rho;
+  BoreSegment s = (BoreSegment)elementAt(head->downstreamBore, 0);
+  double c;
+  double rho;
   double entryradius = WW_EMB_RADIUS;
   double corr = 2.9370 * log(midi) - 11.6284;
+  if (head->embouchureHole) {
+    c = head->embouchureHole->c;
+    rho = head->embouchureHole->rho;
+  } else {
+    c = s->c;
+    rho = s->rho;
+  }
   return multz(flangedZ(f, c, rho, entryradius), real(corr));
 }
 TransferMatrix unitCellMatrix(double f, UnitCell c, double x) {
